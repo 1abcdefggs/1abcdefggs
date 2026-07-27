@@ -59,8 +59,43 @@ A futuristic cyberpunk VS Code dark theme featuring vibrant neon pink and cyan a
 ## 🌱 Open Source & Community Activity
 I actively try to give back to the open-source community by investigating issues, sharing workarounds, and submitting patches. Here are some of my deep-dive investigations:
 
-#### 1. Reddit Devvit CLI: Fixed OAuth Login for International Users
+
+
+### Github, Bug Details
+A bug I recently reported in an issue that concerns me.
+
+Strange caching bug in GitHub's code view
+
+#### GitHub behavior, You can verify this using my code.
+I noticed some weird behavior on GitHub while developing the theme—does nobody use this feature?
+<img width="640" height="360" alt="githubbug" src="https://github.com/user-attachments/assets/40ee8a73-fdfe-4e4f-bf64-299545a2e9d1" />
+ - If you're interested, give it a try here:[/themes/cyber-pink-pink-neon.json#L1-L10](https://github.com/cyber-pinks/cyber-pink-theme/blob/44050afc5fb2140504d782290e70391654e00d81/themes/cyber-pink-pink-neon.json#L1-L10)
+
+reproduce
+
+<img width="auto" height="100" alt="code Issue" src="https://github.com/user-attachments/assets/73f9fd67-cb15-4757-a169-e83549e58592" />
+
+Since you selected the "1–10" range via the previous link, opening a "new issue" loads the page with that URL already inserted into the body text.
+
+Return to the previous screen using the browser's "Back" button.
+Select a different code range,
+then open a new issue again to verify.
+
+After selecting a range of code lines and clicking "Reference in new issue," if you use the browser's "Back" or "Cancel" button to select a *different* range, GitHub gets stuck on the cache from the initial selection. In other words, the newly selected range is completely ignored.
+
+#### Issue page
+I have reported the details and reproduction steps here:
+⇒ [Issue regarding the caching feature #200393](https://github.com/orgs/community/discussions/200393)
+
+If you encounter this same behavior, please **give the discussion a "thumbs up" (👃) or leave a comment.** 
+
+This is a totally different topic, but the 👍️ symbol looks a bit like a nose.👃
+
+
+### 1. Reddit Devvit CLI: Fixed OAuth Login for International Users
 **[reddit/devvit#262](https://github.com/reddit/devvit/pull/262)**
+
+
 
 I decided to try making a game Reddit, but I couldn't install it via the CLI, so I investigated the cause. I managed to fix the issue, but... I still haven't actually made the game.
 
@@ -69,7 +104,7 @@ I investigated a longstanding bug where users with non-English language settings
 * **💡 Solution & Impact:**
 I submitted a detailed report with a client-side patch to force the form into English by appending `locale=en` to the URL. My investigation and report ultimately enabled the Reddit engineering team to implement a permanent fix directly on their backend servers.
 
-#### 2. Lucide Labs: Fixed Icon Rendering in Angular
+### 2. Lucide Labs: Fixed Icon Rendering in Angular
 **[lucide-icons/lucide-lab#6](https://github.com/lucide-icons/lucide-lab/issues/6)**
 
 I use icons here from time to time, but sometimes they wouldn't display correctly, so I took a look at someone else's issue. Even though it wasn't directly related to my own situation, I investigated the cause and figured out what was going on.
